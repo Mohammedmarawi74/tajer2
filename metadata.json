@@ -1,0 +1,7 @@
+{
+  "name": "Al-Investor Studio",
+  "description": "A Canva-style platform to create professional financial and social media graphics inspired by the Al-Investor brand style.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
