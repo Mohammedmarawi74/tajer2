@@ -7,52 +7,52 @@ import * as htmlToImage from 'html-to-image';
 
 const THEMES = {
   light: {
-    '--bg-app': '#f1f5f9',
-    '--bg-panel': '#ffffff',
-    '--bg-element': '#f8fafc',
-    '--text-primary': '#1e293b',
-    '--text-secondary': '#64748b',
-    '--border': '#e2e8f0',
-    '--accent-primary': '#050B14',
-    '--accent-text': '#ffffff',
-    '--highlight': '#00E5CC',
-    '--button-hover': '#e2e8f0'
+    '--bg-app': '#F8FAFC',
+    '--bg-panel': '#FFFFFF',
+    '--bg-element': '#F1F5F9',
+    '--text-primary': '#0F172A',
+    '--text-secondary': '#4B5563',
+    '--border': '#E2E8F0',
+    '--accent-primary': '#2563EB',
+    '--accent-text': '#FFFFFF',
+    '--highlight': '#10B981',
+    '--button-hover': '#E0E7FF'
   },
   dark: {
-    '--bg-app': '#0f172a',
-    '--bg-panel': '#1e293b',
+    '--bg-app': '#0F172A',
+    '--bg-panel': '#1E293B',
     '--bg-element': '#334155',
-    '--text-primary': '#f8fafc',
-    '--text-secondary': '#94a3b8',
+    '--text-primary': '#F8FAFC',
+    '--text-secondary': '#94A3B8',
     '--border': '#334155',
-    '--accent-primary': '#60a5fa',
-    '--accent-text': '#0f172a',
-    '--highlight': '#2dd4bf',
+    '--accent-primary': '#3B82F6',
+    '--accent-text': '#0F172A',
+    '--highlight': '#10B981',
     '--button-hover': '#334155'
   },
-  purple: {
-    '--bg-app': '#f3e8ff',
-    '--bg-panel': '#ffffff',
-    '--bg-element': '#faf5ff',
-    '--text-primary': '#581c87',
-    '--text-secondary': '#7e22ce',
-    '--border': '#e9d5ff',
-    '--accent-primary': '#7e22ce',
-    '--accent-text': '#ffffff',
-    '--highlight': '#d8b4fe',
-    '--button-hover': '#f3e8ff'
+  mint: {
+    '--bg-app': '#ECFDF5',
+    '--bg-panel': '#FFFFFF',
+    '--bg-element': '#F0FDF4',
+    '--text-primary': '#064E3B',
+    '--text-secondary': '#059669',
+    '--border': '#A7F3D0',
+    '--accent-primary': '#10B981',
+    '--accent-text': '#FFFFFF',
+    '--highlight': '#2563EB',
+    '--button-hover': '#D1FAE5'
   },
-  gray: {
-    '--bg-app': '#e5e5e5',
-    '--bg-panel': '#f5f5f5',
-    '--bg-element': '#e5e5e5',
-    '--text-primary': '#171717',
-    '--text-secondary': '#525252',
-    '--border': '#d4d4d4',
-    '--accent-primary': '#262626',
-    '--accent-text': '#ffffff',
-    '--highlight': '#a3a3a3',
-    '--button-hover': '#e5e5e5'
+  purple: {
+    '--bg-app': '#F5F3FF',
+    '--bg-panel': '#FFFFFF',
+    '--bg-element': '#F3E8FF',
+    '--text-primary': '#5B21B6',
+    '--text-secondary': '#7C3AED',
+    '--border': '#DDD6FE',
+    '--accent-primary': '#8B5CF6',
+    '--accent-text': '#FFFFFF',
+    '--highlight': '#2563EB',
+    '--button-hover': '#EDE9FE'
   }
 };
 
@@ -60,16 +60,16 @@ const createNewSlide = (id: string): Slide => ({
   id,
   headline: "شريحة جديدة",
   subheadline: "أضف تفاصيل مكملة لقصتك هنا",
-  highlightText: "قصتك",
+  highlightText: "التاجر",
   subjectImageUrl: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=800&auto=format&fit=crop",
   logoUrl: "",
-  backgroundColor: "#050B14",
-  accentColor: "#00E5CC",
+  backgroundColor: "#FFFFFF",
+  accentColor: "#2563EB",
   layout: 'center',
   showSwipeIndicator: true,
   showSlideNumber: true,
   showProgressBar: true,
-  showGridOverlay: true,
+  showGridOverlay: false,
   customCss: ""
 });
 
@@ -80,16 +80,16 @@ export default function App() {
         id: '1',
         headline: "كيف تبدأ الاستثمار؟",
         subheadline: "دليلك الشامل لتعلم أساسيات المال في 2024",
-        highlightText: "المال",
+        highlightText: "الاستثمار",
         subjectImageUrl: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=800&auto=format&fit=crop",
         logoUrl: "",
-        backgroundColor: "#050B14",
-        accentColor: "#00E5CC",
+        backgroundColor: "#FFFFFF",
+        accentColor: "#2563EB",
         layout: 'center',
         showSwipeIndicator: true,
         showSlideNumber: true,
         showProgressBar: true,
-        showGridOverlay: true,
+        showGridOverlay: false,
         customCss: ""
       }
     ],
@@ -160,8 +160,8 @@ export default function App() {
   };
 
   return (
-    <div 
-      className="flex h-screen w-full overflow-hidden font-['IBM_Plex_Sans_Arabic'] transition-colors duration-300"
+    <div
+      className="flex h-screen w-full overflow-hidden font-['Cairo'] transition-colors duration-300"
       style={{
         ...THEMES[currentTheme],
         backgroundColor: 'var(--bg-app)',
@@ -193,14 +193,14 @@ export default function App() {
         <div className="h-16 border-b border-[var(--border)] bg-[var(--bg-panel)] flex items-center justify-between px-6 z-10 shadow-sm transition-colors duration-300">
            <div className="flex items-center gap-6">
               <span className="text-[11px] font-bold text-[var(--text-secondary)] uppercase tracking-widest">Workspace</span>
-              <div className="flex items-center bg-[var(--bg-element)] rounded-md p-1 border border-[var(--border)] gap-1">
+              <div className="flex items-center bg-[var(--bg-element)] rounded-full p-1.5 border border-[var(--border)] gap-1">
                  {carousel.slides.map((_, i) => (
-                    <button 
+                    <button
                       key={i}
                       onClick={() => setCarousel(p => ({ ...p, activeIndex: i }))}
-                      className={`w-7 h-7 rounded text-[12px] font-bold transition-all flex items-center justify-center ${
-                        carousel.activeIndex === i 
-                          ? 'bg-[var(--accent-primary)] text-[var(--accent-text)] shadow-sm' 
+                      className={`w-8 h-8 rounded-full text-[12px] font-bold transition-all flex items-center justify-center ${
+                        carousel.activeIndex === i
+                          ? 'bg-[var(--accent-primary)] text-[var(--accent-text)] shadow-md'
                           : 'hover:bg-[var(--button-hover)] text-[var(--text-secondary)]'
                       }`}
                     >
@@ -208,30 +208,30 @@ export default function App() {
                     </button>
                  ))}
                  <div className="w-[1px] h-4 bg-[var(--border)] mx-1"></div>
-                 <button 
+                 <button
                   onClick={addSlide}
-                  className="w-7 h-7 rounded hover:bg-[var(--button-hover)] flex items-center justify-center text-[var(--accent-primary)] transition-colors"
+                  className="w-8 h-8 rounded-full hover:bg-[var(--button-hover)] flex items-center justify-center text-[var(--accent-primary)] transition-colors"
                  >
                     <Plus className="w-4 h-4" />
                  </button>
               </div>
            </div>
-           
-           <div className="flex items-center gap-2 bg-[var(--bg-element)] p-1 rounded-md border border-[var(--border)]">
-              <button 
+
+           <div className="flex items-center gap-2 bg-[var(--bg-element)] p-1.5 rounded-full border border-[var(--border)]">
+              <button
                 onClick={() => setCarousel(p => ({ ...p, activeIndex: Math.max(0, p.activeIndex - 1) }))}
                 disabled={carousel.activeIndex === 0}
-                className="p-1.5 hover:bg-[var(--bg-panel)] hover:shadow-sm rounded disabled:opacity-30 transition-all text-[var(--text-secondary)]"
+                className="p-2 hover:bg-[var(--bg-panel)] hover:shadow-sm rounded-full disabled:opacity-30 transition-all text-[var(--text-secondary)]"
               >
                 <ChevronRight className="w-4 h-4" />
               </button>
-              <span className="text-[12px] font-bold w-16 text-center text-[var(--text-primary)] font-mono tracking-tight">
+              <span className="text-[12px] font-bold w-20 text-center text-[var(--text-primary)] font-mono tracking-tight">
                 {String(carousel.activeIndex + 1).padStart(2, '0')} / {String(carousel.slides.length).padStart(2, '0')}
               </span>
-              <button 
+              <button
                 onClick={() => setCarousel(p => ({ ...p, activeIndex: Math.min(carousel.slides.length - 1, p.activeIndex + 1) }))}
                 disabled={carousel.activeIndex === carousel.slides.length - 1}
-                className="p-1.5 hover:bg-[var(--bg-panel)] hover:shadow-sm rounded disabled:opacity-30 transition-all text-[var(--text-secondary)]"
+                className="p-2 hover:bg-[var(--bg-panel)] hover:shadow-sm rounded-full disabled:opacity-30 transition-all text-[var(--text-secondary)]"
               >
                 <ChevronLeft className="w-4 h-4" />
               </button>
@@ -249,24 +249,24 @@ export default function App() {
            </div>
 
            <div className="relative group z-10">
-              <div 
+              <div
                 ref={canvasRef}
-                className="shadow-[0_20px_50px_-12px_rgba(0,0,0,0.15)] overflow-hidden ring-1 ring-slate-900/5 bg-white"
+                className="shadow-[0_25px_60px_-15px_rgba(0,0,0,0.1)] overflow-hidden ring-1 ring-slate-900/5 bg-white rounded-3xl"
                 style={{ width: '420px', aspectRatio: '4/5' }}
               >
-                <EditorCanvas 
-                  slide={activeSlide} 
-                  index={carousel.activeIndex} 
-                  total={carousel.slides.length} 
+                <EditorCanvas
+                  slide={activeSlide}
+                  index={carousel.activeIndex}
+                  total={carousel.slides.length}
                 />
               </div>
 
               {/* Floating Slide Controls (Precise Style) */}
               <div className="absolute -left-14 top-4 flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition-all translate-x-4 group-hover:translate-x-0">
-                 <button onClick={() => duplicateSlide(carousel.activeIndex)} className="p-2.5 bg-[var(--bg-panel)] hover:bg-[var(--bg-element)] border border-[var(--border)] shadow-sm text-[var(--text-secondary)] rounded-md transition-colors" title="Duplicate">
+                 <button onClick={() => duplicateSlide(carousel.activeIndex)} className="p-2.5 bg-[var(--bg-panel)] hover:bg-[var(--bg-element)] border border-[var(--border)] shadow-md text-[var(--text-secondary)] rounded-xl transition-colors" title="Duplicate">
                     <Copy className="w-4 h-4" />
                  </button>
-                 <button onClick={() => removeSlide(carousel.activeIndex)} className="p-2.5 bg-[var(--bg-panel)] hover:bg-red-50 border border-[var(--border)] hover:border-red-200 text-[var(--text-secondary)] hover:text-red-600 shadow-sm rounded-md transition-colors" title="Delete">
+                 <button onClick={() => removeSlide(carousel.activeIndex)} className="p-2.5 bg-[var(--bg-panel)] hover:bg-red-50 border border-[var(--border)] hover:border-red-200 text-[var(--text-secondary)] hover:text-red-600 shadow-md rounded-xl transition-colors" title="Delete">
                     <Trash2 className="w-4 h-4" />
                  </button>
               </div>
@@ -276,22 +276,22 @@ export default function App() {
         {/* Bottom Carousel Reel */}
         <div className="h-32 border-t border-[var(--border)] bg-[var(--bg-panel)] p-4 flex items-center gap-4 overflow-x-auto z-10 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)] transition-colors duration-300">
            {carousel.slides.map((s, i) => (
-              <div 
+              <div
                 key={s.id}
                 onClick={() => setCarousel(p => ({ ...p, activeIndex: i }))}
-                className={`flex-shrink-0 h-24 aspect-[4/5] border transition-all cursor-pointer overflow-hidden relative group rounded-sm ${
-                  carousel.activeIndex === i ? 'border-[var(--highlight)] ring-2 ring-[var(--highlight)]/20 translate-y-[-2px] shadow-md' : 'border-[var(--border)] hover:border-[var(--text-secondary)] hover:shadow-sm'
+                className={`flex-shrink-0 h-24 aspect-[4/5] border transition-all cursor-pointer overflow-hidden relative group rounded-2xl ${
+                  carousel.activeIndex === i ? 'border-[var(--highlight)] ring-2 ring-[var(--highlight)]/20 translate-y-[-2px] shadow-lg' : 'border-[var(--border)] hover:border-[var(--text-secondary)] hover:shadow-md'
                 }`}
               >
                  <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${s.subjectImageUrl})` }}></div>
-                 <div className="absolute inset-0 bg-[#050B14]/80 flex items-center justify-center backdrop-blur-[1px]">
+                 <div className="absolute inset-0 bg-[#0F172A]/80 flex items-center justify-center backdrop-blur-[1px]">
                     <span className={`text-xl font-bold text-white ${carousel.activeIndex === i ? 'text-[var(--highlight)]' : ''}`}>{i + 1}</span>
                  </div>
               </div>
            ))}
-           <button 
+           <button
             onClick={addSlide}
-            className="flex-shrink-0 h-24 aspect-[4/5] border border-dashed border-[var(--border)] hover:border-[var(--highlight)] hover:bg-[var(--highlight)]/5 flex flex-col items-center justify-center gap-2 transition-all group rounded-sm"
+            className="flex-shrink-0 h-24 aspect-[4/5] border-2 border-dashed border-[var(--border)] hover:border-[var(--highlight)] hover:bg-[var(--highlight)]/5 flex flex-col items-center justify-center gap-2 transition-all group rounded-2xl"
            >
               <Plus className="w-5 h-5 text-[var(--text-secondary)] group-hover:text-[var(--highlight)]" />
               <span className="text-[10px] font-bold text-[var(--text-secondary)] group-hover:text-[var(--highlight)]">Add Slide</span>
