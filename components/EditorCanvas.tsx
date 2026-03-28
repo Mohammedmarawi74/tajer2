@@ -334,20 +334,7 @@ const EditorCanvas: React.FC<Props> = ({ slide, index, total }) => {
       {/* 4. Slide Number Indicator - Modern pill design */}
       {slide.showSlideNumber && (
         <div className="absolute top-4 right-4 z-50 poster-number">
-          <div className="flex flex-col items-end gap-1">
-            <span
-              className="px-3 py-1.5 rounded-full text-sm font-bold leading-none shadow-lg"
-              style={{ 
-                backgroundColor: slide.accentColor,
-                color: '#FFFFFF'
-              }}
-            >
-              {String(index + 1).padStart(2, "0")}
-            </span>
-            <span className="text-[8px] font-medium tracking-wide text-slate-400 uppercase font-sans">
-              من {String(total).padStart(2, "0")}
-            </span>
-          </div>
+          {/* Slide numbering indicator removed as per user request */}
         </div>
       )}
 
@@ -359,41 +346,15 @@ const EditorCanvas: React.FC<Props> = ({ slide, index, total }) => {
             alt="Logo"
             className="h-10 w-auto max-w-[100px] object-contain drop-shadow-md poster-logo"
           />
-        ) : (
-          <div className="flex items-center gap-2 px-3 py-2 bg-white/80 backdrop-blur-sm rounded-full shadow-lg border border-slate-200">
-            <div className="w-8 h-8 rounded-full flex items-center justify-center shadow-md text-white" style={{ backgroundColor: slide.accentColor }}>
-              <svg
-                width="18"
-                height="18"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
-                <polyline points="17 6 23 6 23 12"></polyline>
-              </svg>
-            </div>
-            <div className="text-right">
-              <div className="text-[11px] font-black leading-none text-slate-800">
-                التاجر
-              </div>
-              <div className="text-[8px] font-bold tracking-wide text-slate-500">
-                Digital
-              </div>
-            </div>
-          </div>
-        )}
+        ) : null}
       </div>
 
       {/* 6. Subject Image with Soft Shadow - Bottom area */}
-      <div className="absolute bottom-0 w-full h-[42%] flex justify-center items-end z-10 pointer-events-none poster-image-container">
+      <div className="absolute bottom-12 w-full h-[45%] flex justify-center items-end z-10 pointer-events-none poster-image-container">
         <img
           src={slide.subjectImageUrl}
           alt="Subject"
-          className="h-full w-auto max-w-[80%] object-contain object-bottom drop-shadow-[0_20px_40px_rgba(0,0,0,0.15)] contrast-105 poster-image"
+          className="h-full w-auto max-w-[85%] object-contain object-bottom drop-shadow-[0_20px_40px_rgba(0,0,0,0.15)] contrast-105 poster-image"
         />
       </div>
 
@@ -456,7 +417,20 @@ const EditorCanvas: React.FC<Props> = ({ slide, index, total }) => {
         </div>
       )}
 
-      {/* 9. Final Aesthetics - Soft vignette */}
+      {/* 9. Footer Branding */}
+      <div className="absolute bottom-0 left-0 right-0 px-8 py-6 flex justify-between items-center z-50 poster-footer">
+        <div className="flex items-center gap-2">
+          <div style={{ backgroundColor: slide.accentColor }}></div>
+          <span className="text-[11px] font-black tracking-tight text-slate-800">
+            منصة التاجر
+          </span>
+        </div>
+        <span className="text-[11px] font-bold tracking-widest text-slate-900 uppercase font-sans">
+          dtajer.com
+        </span>
+      </div>
+
+      {/* 10. Final Aesthetics - Soft vignette */}
       <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(0,0,0,0.03)_100%)]"></div>
     </div>
   );
