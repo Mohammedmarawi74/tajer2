@@ -73,7 +73,7 @@ const Sidebar: React.FC<Props> = ({ state, setState, onDownload, isExporting, cu
   );
 
   return (
-    <aside className="w-full lg:w-[360px] bg-[var(--bg-panel)] border-l border-[var(--border)] overflow-y-auto flex flex-col z-50 transition-colors duration-300 font-['Cairo']">
+    <aside className="w-full lg:w-[360px] bg-[var(--bg-panel)] border-l border-[var(--border)] overflow-y-auto flex flex-col z-50 transition-colors duration-300 font-[family-name:var(--font-primary)]">
       {/* Header */}
       <div className="p-6 border-b border-[var(--border)] bg-[var(--bg-element)]/50">
         <div className="flex items-center gap-3 mb-6">

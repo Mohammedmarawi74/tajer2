@@ -17,7 +17,7 @@
   --at-shadow: rgba(15, 23, 42, 0.1);
   
   /* Typography */
-  --font-primary: 'Cairo', 'Tajawal', 'Almarai', sans-serif;
+  --font-primary: 'IBM Plex Sans Arabic', 'Cairo', 'Tajawal', 'Almarai', sans-serif;
   
   /* Border Radius */
   --radius-sm: 8px;

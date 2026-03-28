@@ -36,7 +36,7 @@ const EditorCanvas: React.FC<Props> = ({ slide, index, total }) => {
 
   return (
     <div
-      className="w-full h-full relative overflow-hidden select-none font-['Cairo'] poster-root"
+      className="w-full h-full relative overflow-hidden select-none font-[family-name:var(--font-primary)] poster-root"
       dir="rtl"
       style={{ backgroundColor: slide.backgroundColor }}
     >

@@ -161,7 +161,7 @@ export default function App() {
 
   return (
     <div
-      className="flex h-screen w-full overflow-hidden font-['Cairo'] transition-colors duration-300"
+      className="flex h-screen w-full overflow-hidden font-[family-name:var(--font-primary)] transition-colors duration-300"
       style={{
         ...THEMES[currentTheme],
         backgroundColor: 'var(--bg-app)',
